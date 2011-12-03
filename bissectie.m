@@ -1,4 +1,4 @@
-function bissectie( f,a,b,delta,maxit )
+function [X,r]=bissectie( f,a,b,delta,maxit )
 %BISSECTIE Calculates x values
 % f 		: filename of the function
 % a     	: starting value
@@ -16,7 +16,7 @@ for n = 1 : maxit
     if abs(eval(2))<=delta%stops if within toleration
    disp('    count    value    evaluation');
    disp(r);
-   fprintf('zero within tolerance %f in %f', delta, val(2));
+   fprintf('zero within tolerance %f in %f', delta, val(2)); X=r(:,2);
         return;
     %detects if signchange between midpoint and left bound
     elseif eval(1)*eval(2)<0&&eval(3)*eval(2)>0%if signchange=> new rightborder is midpoint
