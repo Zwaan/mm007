@@ -1,4 +1,4 @@
-function bissectie( f,a,b,delta,maxit )
+function [X,r]=bissectie( f,a,b,delta,maxit )
 %BISSECTIE Calculates x values
 % f 		: filename of the function
 % a     	: starting value
@@ -6,8 +6,8 @@ function bissectie( f,a,b,delta,maxit )
 % delta 	: value for convergence test
 % maxit	    : maximum number of iterations
 % RETURN    : x = vector [x0 x1 x2... xn]
-f=vectorize(f);
 val=[a .5*a+.5*b b];
+f=vectorize(f);
 eval= feval(f,val);
 if sign(eval(1))==sign(eval(3)) % evaluates sign change
     error('no sign change');
@@ -17,7 +17,7 @@ for n = 1 : maxit
     if abs(eval(2))<=delta%stops if within toleration
    disp('    count    value    evaluation');
    disp(r);
-   fprintf('zero within tolerance %f in %f', delta, val(2));
+   fprintf('zero within tolerance %f in %f', delta, val(2)); X=r(:,2);
         return;
     %detects if signchange between midpoint and left bound
     elseif eval(1)*eval(2)<0&&eval(3)*eval(2)>0%if signchange=> new rightborder is midpoint

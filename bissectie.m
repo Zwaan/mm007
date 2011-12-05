@@ -7,6 +7,7 @@ function [X,r]=bissectie( f,a,b,delta,maxit )
 % maxit	    : maximum number of iterations
 % RETURN    : x = vector [x0 x1 x2... xn]
 val=[a .5*a+.5*b b];
+f=vectorize(f);
 eval= feval(f,val);
 if sign(eval(1))==sign(eval(3)) % evaluates sign change
     error('no sign change');
