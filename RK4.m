@@ -1,4 +1,12 @@
 function [x,y] = RK4(f,x0,y0,h,n)
+% f: function inline
+% x0: start value x
+% y0: start value y
+% h: stepsize
+% n: number of iterations requested
+%vb:    funb=inline('-1.244e-4*Q','t','Q');
+%       [t1,Q1]=RK4(funb,0,30,1000,50);
+% RK4: -2.78<h*df/dQ<0
 x = (x0 + h: h:x0+n*h);
 k1 = h*feval(f,x0,y0);
 k2 = h*feval(f, x0 + h/2, y0 + k1/2);
