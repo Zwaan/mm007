@@ -9,7 +9,7 @@ First thing to do (example for the mm007 repository)
 	3. git init
 
 Make changes and send to on-line repository
-	1. You can edit files with an editor (e.g. Matlab). You can also create new 		   files.
+	1. You can edit files with an editor (e.g. Matlab). You can also create new files.
 	2. git pull
 	3. git commit -a -m “comment here”
 	4. git push
