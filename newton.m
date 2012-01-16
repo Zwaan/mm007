@@ -1,4 +1,5 @@
 function [x,y] = newton(f,df,x0,delta,maxit)
+%Calculates zero of function using Newton's method
 % f 		: filename of the function
 % df		: filename of the derivative
 % x0		: starting value
