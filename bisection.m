@@ -1,5 +1,6 @@
 function [X,r]=bisection( f,a,b,delta,maxit )
-%BISSECTIE Calculates zero using bisection method.
+%BISSECTIE Calculates zero using bisection method. Automatically works for
+%ascending and descending functions.
 % f 		: filename of the function
 % a     	: starting value
 % b         : secon begin value
