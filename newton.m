@@ -5,12 +5,12 @@ function [x,y] = newton(f,df,x0,delta,maxit)
 % delta    	: value for convergence test
 % maxit	    : maximum number of iterations
 
-%bijvoorbeeld:
+%example:
 %y=inline('x^3+3*x-4','x');
 %dy=inline('3*x^2+3','x'); 
 %N=newton(y,dy,3,10^-20,55);
-x(1) = x0;
-y(1) = feval(f,x(1)); dy = feval(df,(x(1)));
+x(1:maxit) = x0;
+y(1:maxit) = feval(f,x(1)); dy = feval(df,(x(1)));
 for i = 2 : maxit
     x(i) = x(i-1) - y(i-1)/dy(i-1); 
     y(i)=feval(f,x(i));
@@ -22,5 +22,7 @@ for i = 2 : maxit
         disp('Newton: Zero not found');
     end
 end
-disp([(1:length(x))' x' y']);
+x=x(1:i);
+y=y(1:i);
+disp([(1:i)' x' y']);
 end
