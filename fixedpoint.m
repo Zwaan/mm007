@@ -11,10 +11,11 @@ f=vectorize(f);
 if length(a)~=length(tol)&&length(tol)~=1
     error('no good tollerance');
 end
-c(1,:)=a;
+c(1:max,:)=a;
 for i=1:max
 c(i+1,:)=feval(f,c(i,:));
     if abs(c(i+1,:)-c(i,:))<tol
+        c=c(1:i+1,:);
         disp([(1:i+1)' c]);
         return;
     end
