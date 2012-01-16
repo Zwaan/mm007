@@ -1,10 +1,12 @@
 function [x,y] = newton(f,df,x0,delta,maxit)
-%Calculates zero of function using Newton's method
+%Calculates zero of function using Newton's method. Controls by comparing
+%two successive values in iteration.
 % f 		: filename of the function
 % df		: filename of the derivative
 % x0		: starting value
 % delta    	: value for convergence test
 % maxit	    : maximum number of iterations
+% RETURN    : x : vector of x values, y : vector of y values
 
 %example:
 %y=inline('x^3+3*x-4','x');
