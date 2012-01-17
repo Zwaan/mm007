@@ -16,7 +16,7 @@ function p = newtons(f,df,p0,tol,maxit)
 %   function v = f3(x,y)
 %   v = [x^2-x+y^2; x^2-y-y^2];
 %derivative
-% function V = f3j(x,y)
+%   function V = f3j(x,y)
 %   V = [2*x-1, 2*y; 2*x, -2*y-1];
 %newtons(@f3,@f3j,[0.8;0.4],1e-7,100)
 p =zeros(2,maxit);
