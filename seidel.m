@@ -1,22 +1,19 @@
+function seidel(A,b,x0,delta,maxit)
 % this function solves a n-by-n linear system A x = b
 % with Gauss-Seidel iterative method
-function seidel(A,b,x0,delta,maxit)
 % Ax=b      : the system
 % x0		: initial solution
 % delta 	: value for convergence test
 % maxit     : maximum number of iterations
 
-
 %vb: A=[-4 1 1 0; 1 -4 0 1;1 0 -4 1; 0 1 1 -4];b=[-3;-1;-5;-3];
 % seidel(A,b,[1;0;0;0],1e-5,100)
-
 
 h=cond(A);
 fprintf('\nConditiegetal van a: %d \n', h);
 if h>100
-    disp('     OPGELET: conditiegetal gevaarlijk groot');fprintf('\n');
+    fprintf('OPGELET: conditiegetal gevaarlijk groot\n');
 end
-
 % construction of J and K
 % Dinv = inv(diag(diag(A))); %% diag(diag(A)) is nodig om terug een 3*3 te hebben ipv een 3*1 matrix
 E = -tril(A,-1);% onderdriehoeksmatrix min de 1ste diagonaal
