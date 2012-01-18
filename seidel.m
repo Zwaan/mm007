@@ -25,7 +25,7 @@ J=-D\(L+U);
 M=D+L;N=-U;%p 3/5 H3 M=D+L en N=-U
 K=D\b;%K=inv(D)*b
 T=M\N;%Gauss-Seidel-iteration-matrix
-if max(eig(M\N))>=1 % NVV convergentie p3/5 H3
+if max(eig(T))>=1 % NVV convergentie p3/5 H3
   disp('NVV convergentie G-S niet voldaan');
   x=x0;return;
 end
